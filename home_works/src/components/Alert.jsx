@@ -2,24 +2,21 @@ import React from "react";
 
 class Alert extends React.Component {
   render() {
+    const possibleTypes = [
+      "primary",
+      "secondary",
+      "success",
+      "danger",
+      "warning",
+      "info",
+      "light",
+      "dark",
+    ];
+
     const alertType = this.props.type;
 
-    function checkAlertType(alertTypeAtt) {
-      const possibleTypes = [
-        "primary",
-        "secondary",
-        "success",
-        "danger",
-        "warning",
-        "info",
-        "light",
-        "dark",
-      ];
-
-      return possibleTypes.includes(alertTypeAtt) ? alertTypeAtt : "light";
-    }
-
-    const fullClasses = "alert alert-" + checkAlertType(alertType);
+    const resultType = possibleTypes.includes(alertType) ? alertType : "danger";
+    const fullClasses = "alert alert-" + resultType;
 
     return (
       <div className={fullClasses} role="alert">
@@ -31,6 +28,7 @@ class Alert extends React.Component {
 
 Alert.defaultProps = {
   text: "Hello",
+  // type: "light",
 };
 
 export default Alert;

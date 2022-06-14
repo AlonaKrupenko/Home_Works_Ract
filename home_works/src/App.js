@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Carousel from "./Carousel/Carousel";
 
 function App() {
+  const pictures = [
+    {
+      name: "first",
+      src: "https://img3.goodfon.ru/wallpaper/nbig/4/6f/fon-geometriya-figury.jpg",
+    },
+    {
+      name: "second",
+      src: "https://www.meme-arsenal.com/memes/4a6c4107bd68e9286dce5628a474451b.jpg",
+    },
+    {
+      name: "third",
+      src: "https://img.freepik.com/free-vector/festive-background-abstraction-screensaver_497922-151.jpg",
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Carousel items={pictures} />
     </div>
   );
 }
